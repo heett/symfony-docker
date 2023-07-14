@@ -12,7 +12,6 @@ use PHPUnit\Framework\TestCase;
 
 class BookCategoryServiceTest extends TestCase
 {
-
     public function testGetCategories(): void
     {
         $repository = $this->createMock(BookCategoryRepository::class);
