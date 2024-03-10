@@ -12,7 +12,7 @@ class Book
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type: "integer")]
+    #[ORM\Column(type: 'integer')]
     private ?int $id;
 
     #[ORM\Column(type: 'string', length: 255)]
@@ -95,6 +95,7 @@ class Book
 
     /**
      * @param string[] $authors
+     *
      * @return $this
      */
     public function setAuthors(array $authors): self
@@ -138,6 +139,7 @@ class Book
 
     /**
      * @param Collection<BookCategory> $categories
+     *
      * @return $this
      */
     public function setCategories(Collection $categories): self

@@ -10,7 +10,7 @@ class BookCategory
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type: "integer")]
+    #[ORM\Column(type: 'integer')]
     private ?int $id;
 
     #[ORM\Column(type: 'string', length: 255)]
@@ -47,5 +47,4 @@ class BookCategory
 
         return $this;
     }
-
 }

@@ -15,7 +15,7 @@ class BookCategoryFixtures extends Fixture
     {
         $categories = [
             self::ANDROID_CATEGORY => (new BookCategory())->setTitle('Android')->setSlug('android'),
-            self::DEVICES_CATEGORY => (new BookCategory())->setTitle('Devices')->setSlug('devices')
+            self::DEVICES_CATEGORY => (new BookCategory())->setTitle('Devices')->setSlug('devices'),
         ];
 
         foreach ($categories as $category) {
@@ -29,6 +29,5 @@ class BookCategoryFixtures extends Fixture
         foreach ($categories as $code => $category) {
             $this->addReference($code, $category);
         }
-
     }
 }

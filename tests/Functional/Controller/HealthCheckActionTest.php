@@ -2,7 +2,6 @@
 
 namespace App\Tests\Functional\Controller;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Request;
 

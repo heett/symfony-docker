@@ -11,9 +11,7 @@ use App\Repository\BookCategoryRepository;
 use App\Repository\BookRepository;
 use App\Service\BookService;
 use App\Tests\AbstractsTestCase;
-use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
-use PHPUnit\Framework\TestCase;
 
 class BookServiceTest extends AbstractsTestCase
 {
@@ -31,7 +29,7 @@ class BookServiceTest extends AbstractsTestCase
 
         $this->expectException(BookCategoryNotFoundException::class);
 
-        (new BookService($bookRepository,$bookCategoryRepository))->getBooksByCategory($id);
+        (new BookService($bookRepository, $bookCategoryRepository))->getBooksByCategory($id);
     }
 
     public function testGetBooksByCategory()
@@ -50,7 +48,7 @@ class BookServiceTest extends AbstractsTestCase
             ->with($id)
             ->willReturn(new BookCategory());
 
-        $service = new BookService($bookRepository,$bookCategoryRepository);
+        $service = new BookService($bookRepository, $bookCategoryRepository);
 
         $expected = new BookListResponse([$this->createBookItemModel()]);
 
@@ -66,11 +64,11 @@ class BookServiceTest extends AbstractsTestCase
             ->setAuthors(['Tester'])
             ->setImage('http://localhost/test.png')
             ->setCategories(new ArrayCollection())
-            ->setPublicationDate(new DateTime('2020-10-10'));
+            ->setPublicationDate(new \DateTime('2020-10-10'));
 
-        $this->setEntityId($book,123);
+        $this->setEntityId($book, 123);
 
-        return  $book;
+        return $book;
     }
 
     private function createBookItemModel(): BookListItem

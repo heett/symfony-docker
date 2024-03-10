@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\BookCategory;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -19,6 +20,14 @@ class BookCategoryRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, BookCategory::class);
+    }
+
+    /**
+     * @return BookCategory[]
+     */
+    public function findAllSortedByTitle()
+    {
+        return $this->findBy([], ['title' => Criteria::ASC]);
     }
 
     public function save(BookCategory $entity, bool $flush = false): void
@@ -38,5 +47,4 @@ class BookCategoryRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-
 }

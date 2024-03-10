@@ -21,7 +21,7 @@ class BookFixtures extends Fixture implements DependentFixtureInterface
             ->setMeap(false)
             ->setAuthors(['Timo Tuominen'])
             ->setSlug('rxjava-for-android-developers')
-            ->setCategories(new  ArrayCollection([$androidCategory, $devicesCategory]))
+            ->setCategories(new ArrayCollection([$androidCategory, $devicesCategory]))
             ->setImage('https://images.manning.com/360/480/resize/book/b/bc57fb7-b239-4bf5-bbf2-886be8936951/Tuominen-RxJava-HI.png');
 
         $manager->persist($book);

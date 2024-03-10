@@ -2,7 +2,6 @@
 
 namespace App\Tests\Controller;
 
-use App\Controller\BookCategoryController;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class BookCategoryControllerTest extends WebTestCase
@@ -13,11 +12,11 @@ class BookCategoryControllerTest extends WebTestCase
         $client->request('GET', '/api/v1/book/categories');
         $responseContent = $client->getResponse()->getContent();
 
-        //200 код
+        // 200 код
         $this->assertResponseIsSuccessful();
 
         $this->assertJsonStringEqualsJsonFile(
-            __DIR__ . '/responses/BookCategoryControllerTest_testCategories.json',
+            __DIR__.'/responses/BookCategoryControllerTest_testCategories.json',
             $responseContent);
     }
 }

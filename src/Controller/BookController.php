@@ -6,8 +6,8 @@ use App\Exception\BookCategoryNotFoundException;
 use App\Service\BookService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\Routing\Annotation\Route;
 
 class BookController extends AbstractController
 {

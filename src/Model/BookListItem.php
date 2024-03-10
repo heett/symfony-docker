@@ -71,7 +71,6 @@ class BookListItem
 
     /**
      * @param string[] $authors
-     * @return self
      */
     public function setAuthors(array $authors): self
     {
